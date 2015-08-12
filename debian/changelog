@@ -1,3 +1,10 @@
+fribidi (0.19.7-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update copyright years.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Wed, 12 Aug 2015 07:31:53 +0200
+
 fribidi (0.19.6-3) unstable; urgency=medium
 
   * debian/control: Bumped Standards-Version to 3.9.6
