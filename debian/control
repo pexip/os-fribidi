@@ -3,20 +3,21 @@ Section: libs
 Priority: optional
 Maintainer: Pexip AS <packaging@pexip.com>
 XSBC-Pexip-Original-Maintainer: Debian Hebrew Packaging Team <debian-hebrew-package@lists.alioth.debian.org>
-XSBC-Pexip-Original-Uploaders: Baruch Even <baruch@debian.org>,
- Lior Kaplan <kaplan@debian.org>,
+XSBC-Pexip-Original-Uploaders: Lior Kaplan <kaplan@debian.org>,
  Shachar Shemesh <shachar@debian.org>,
  أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>
-Standards-Version: 3.8.4
-Build-Depends: debhelper (>= 7.0.50~), pkg-config
+Standards-Version: 3.9.6
+Build-Depends: debhelper (>= 9~), pkg-config
 Homepage: http://www.fribidi.org/
-Vcs-Git: git://git.debian.org/git/collab-maint/fribidi.git
-Vcs-Browser: http://git.debian.org/?p=collab-maint/fribidi.git
+Vcs-Git: git://anonscm.debian.org/collab-maint/fribidi.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/fribidi.git
 XS-Pexip-Upstream: http://ftp.debian.org/debian/ jessie
 
 Package: libfribidi0
 Architecture: any
+Multi-Arch: same
 Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: Free Implementation of the Unicode BiDi algorithm
  FriBiDi is a BiDi algorithm implementation for Hebrew and/or Arabic
  languages.
@@ -33,7 +34,7 @@ Description: Development files for FreeBidi library
  FriBidi C library.
 
 Package: libfribidi0-udeb
-XC-Package-Type: udeb
+Package-Type: udeb
 Architecture: any
 Section: debian-installer
 Priority: extra
@@ -42,3 +43,13 @@ Description: Free Implementation of the Unicode BiDi algorithm
  This Debian Installer component provided Bidirectional support 
  for Arabic and/or Hebrew languages.
 
+Package: libfribidi-bin
+Architecture: any
+Section: utils
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: libfribidi0 (<< 0.19.2-3)
+Replaces: libfribidi0 (<< 0.19.2-3)
+Description: Free Implementation of the Unicode BiDi algorithm (utility)
+ FriBiDi is a BiDi algorithm implementation for Hebrew and/or Arabic
+ languages.
+ This package contains a command line interface for the fribidi library.
