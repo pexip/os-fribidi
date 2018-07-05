@@ -1,3 +1,110 @@
+commit e56ad2682d74867c9b7bdfba46f8e8f60f480904
+Author: Khaled Hosny <khaledhosny@eglug.org>
+Date:   Tue Aug 4 07:20:30 2015 +0200
+
+    0.19.7
+
+ NEWS         | 5 +++++
+ configure.ac | 4 ++--
+ 2 files changed, 7 insertions(+), 2 deletions(-)
+
+commit f7e03ab0eb0b4d855d4aaff75038811652adf81e
+Author: Khaled Hosny <khaledhosny@eglug.org>
+Date:   Tue Aug 4 05:31:30 2015 +0200
+
+    Fix misc autotools warnings
+
+ Makefile.am  | 2 ++
+ configure.ac | 3 +++
+ 2 files changed, 5 insertions(+)
+
+commit d90e84933c99f5850ccfa94e38f63f70555b3e21
+Author: Benedikt Morbach <benedikt.morbach@googlemail.com>
+Date:   Mon Sep 15 16:37:53 2014 +0200
+
+    ignore COLUMNS for --help and --test
+
+    also fix a bug in the --help output.
+    With COLUMNS=123 it would display
+        "default is 123 but if COLUMNS is set..."
+    instead of
+        "default is 80 but if COLUMNS is set..."
+
+    https://bugs.freedesktop.org/show_bug.cgi?id=83892
+
+ bin/fribidi-main.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+commit 926c314f9c904cff1de4b3f805b027ffc108f01d
+Author: Behnam Esfahbod <behnam@behnam.es>
+Date:   Sat Dec 6 01:45:17 2014 -0800
+
+    Only include public glib.h
+
+    Fixes error: #error "Only glib.h can be included directly."
+    with glib versions >= 2.31.
+
+    https://bugs.freedesktop.org/show_bug.cgi?id=83894
+    https://github.com/behdad/fribidi/pull/1
+
+ charset/fribidi-char-sets.c | 2 +-
+ lib/mem.h                   | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 6a2aa132ba25ba0e3cea105d6bd77bca580abef7
+Merge: 9ca217a 7846df3
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Tue May 26 10:39:51 2015 -0700
+
+    Merge pull request #2 from dov/master
+
+    Updated my email.
+
+commit 9ca217ae3acecd6e175ac2b0cb0da4f91e8a6399
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Wed Jul 23 14:26:11 2014 -0400
+
+    Fix warning
+
+    https://bugs.freedesktop.org/show_bug.cgi?id=81573
+
+ bin/fribidi-main.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d6bcbea27bd51f4e0a8e5b0cc35b2fdb8d1896d2
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Thu Jul 10 16:06:23 2014 -0400
+
+    Support 4-byte UTF-8 sequences
+
+    Patch from Christina Brien <chris.brien@cisco.com>.
+
+ charset/fribidi-char-sets-utf8.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+commit 54b4496e9c2368c53f1cff57347c1f395328a142
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Tue Jul 1 18:20:37 2014 -0400
+
+    Disable memory pool by default
+
+    https://bugs.freedesktop.org/show_bug.cgi?id=79385
+
+ configure.ac | 10 ++--------
+ 1 file changed, 2 insertions(+), 8 deletions(-)
+
+commit 7846df3444a2fcfbb1abd5feb933c2361dbf8c56
+Author: Dov Grobgeld <dov.grobgeld@gmail.com>
+Date:   Sat Mar 8 19:21:31 2014 +0200
+
+    Updated my email.
+
+ AUTHORS        |  2 +-
+ ChangeLog.old  | 48 ++++++++++++++++++++++++------------------------
+ THANKS         |  2 +-
+ test/run.tests |  2 +-
+ 4 files changed, 27 insertions(+), 27 deletions(-)
+
 commit 77f7f6c0bb16b89eac1e3b3d264f49b2ee02de3e
 Author: Behdad Esfahbod <behdad@behdad.org>
 Date:   Fri Dec 6 15:56:53 2013 -0500
