@@ -1,3 +1,9 @@
+fribidi (0.19.7-1pexip1) pexip; urgency=medium
+
+  * Migrate to Stretch
+
+ -- John-Mark Bell <jmb@pexip.com>  Tue, 10 Jul 2018 00:19:45 +0000
+
 fribidi (0.19.7-1) unstable; urgency=medium
 
   * New upstream release.
