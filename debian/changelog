@@ -1,3 +1,93 @@
+fribidi (1.0.5-3.1+deb10u1) buster-security; urgency=high
+
+  * Non-maintainer upload by the Security Team.
+  * Truncate isolate_level to FRIBIDI_BIDI_MAX_EXPLICIT_LEVEL (CVE-2019-18397)
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Wed, 06 Nov 2019 07:48:41 +0100
+
+fribidi (1.0.5-3.1) unstable; urgency=medium
+
+  * Non-maintainer upload from the Venlo BSP.
+
+  [ Ondřej Nový ]
+  * d/copyright: Change Format URL to correct one
+
+  [ Hugh McMaster ]
+  * debian/control: Mark libfribidi-dev Multi-Arch: same (Closes: #907792).
+  * libfribidi0-udeb: Install the shared library files into a multi-arch libdir
+    (thanks to Samuel Thibault for supplying a patch) (Closes: #917909).
+
+ -- Christoph Berg <myon@debian.org>  Sat, 12 Jan 2019 13:33:35 +0100
+
+fribidi (1.0.5-3) unstable; urgency=medium
+
+  * Add pkg-config to build autopkgtest dependencies
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Mon, 20 Aug 2018 15:02:40 +0200
+
+fribidi (1.0.5-2) unstable; urgency=medium
+
+  * Add no-config-h.diff patch to remove HAVE_CONFIG_H from public API
+    (Closes: #906418, #906506)
+  * Add autopkgtest test suite
+  * Updated standards version to 4.2.0
+  * Remove trailing whitespaces
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Sun, 19 Aug 2018 17:29:36 +0200
+
+fribidi (1.0.5-1) unstable; urgency=medium
+
+  * New upstream release.
+  * No need for filenamemangle in watch file
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Tue, 24 Jul 2018 03:24:18 +0200
+
+fribidi (1.0.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update watch URL
+  * Refresh patch
+  * Remove override for dh_auto_install
+  * Update symbols file
+  * Add upstream metadata
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Mon, 16 Jul 2018 03:37:06 +0200
+
+fribidi (0.19.7-5) unstable; urgency=medium
+
+  * Bumped compat level to 11
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Sun, 15 Jul 2018 08:09:23 +0200
+
+fribidi (0.19.7-4) unstable; urgency=medium
+
+  [ Simon McVittie ]
+  * Reinstate the static library (Closes: #902822)
+
+  [ أحمد المحمودي (Ahmed El-Mahmoudy) ]
+  * Updated standards version to 4.1.5
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Sun, 15 Jul 2018 07:21:08 +0200
+
+fribidi (0.19.7-3) unstable; urgency=medium
+
+  * Update Vcs-* URLs
+  * Set maintainer email address to fribidi@tracker.debian.org (Closes: #899925)
+  * Switch to secure copyright format URL
+  * Update standards version
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Wed, 27 Jun 2018 01:22:08 +0200
+
+fribidi (0.19.7-2) unstable; urgency=medium
+
+  * Update watch file
+  * Update standards version to 4.1.1
+  * Bump compat level to 10
+  * Switch Vcs-* fields to secure URLs
+  * Changed udeb priority to optional
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Sun, 19 Nov 2017 03:49:13 +0100
+
 fribidi (0.19.7-1) unstable; urgency=medium
 
   * New upstream release.
@@ -108,7 +198,7 @@ fribidi (0.19.2-1) unstable; urgency=low
   * Added manpages.diff patch to fix a couple of hyphen issues in
     fribidi_remove_bidi_marks.3
   * Added typos.diff patch to fix typo in fribidi help information.
-  * Use dh_install instead of dh_movefiles: Rename debian/*.files to 
+  * Use dh_install instead of dh_movefiles: Rename debian/*.files to
     debian/*.install
 
  -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Thu, 04 Feb 2010 13:15:40 +0200
@@ -311,5 +401,3 @@ fribidi (0.1.12-1) unstable; urgency=low
   * Initial Release.
 
  -- Changwoo Ryu <cwryu@debian.org>  Tue, 22 Aug 2000 02:13:16 +0900
-
-
