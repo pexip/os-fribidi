@@ -4,9 +4,9 @@ Bug: https://bugs.freedesktop.org/show_bug.cgi?id=54147
 Forwarded: https://bugs.freedesktop.org/attachment.cgi?id=66207
 Index: fribidi/doc/fribidi_remove_bidi_marks.3
 ===================================================================
---- fribidi.orig/doc/fribidi_remove_bidi_marks.3	2018-07-15 15:05:37.948747901 +0200
-+++ fribidi/doc/fribidi_remove_bidi_marks.3	2018-07-15 15:07:22.761168734 +0200
-@@ -54,14 +54,14 @@
+--- fribidi.orig/doc/fribidi_remove_bidi_marks.3	2019-12-19 09:44:53.620621902 +0100
++++ fribidi/doc/fribidi_remove_bidi_marks.3	2019-12-19 09:46:48.441080836 +0100
+@@ -54,13 +54,13 @@
  string, the other way. Moreover, the position maps should be filled with
  valid entries.
  
@@ -16,7 +16,6 @@ Index: fribidi/doc/fribidi_remove_bidi_marks.3
  
  For best results this function should be run on a whole paragraph, not
  lines; but feel free to do otherwise if you know what you are doing.
- Deprecated.  Use fribidi_remove_special_chars instead.
  .SH "RETURNS"
 -New length of the string, or \-1 if an error occurred (memory
 +New length of the string, or \(hy1 if an error occurred (memory
