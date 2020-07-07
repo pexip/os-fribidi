@@ -12,12 +12,15 @@ libfribidi.so.0 libfribidi0 #MINVER#
  fribidi_get_bidi_type@Base 0.19.2
  fribidi_get_bidi_type_name@Base 0.19.2
  fribidi_get_bidi_types@Base 0.19.2
+ fribidi_get_bracket@Base 1.0.0
+ fribidi_get_bracket_types@Base 1.0.0
  fribidi_get_joining_type@Base 0.19.2
  fribidi_get_joining_type_name@Base 0.19.2
  fribidi_get_joining_types@Base 0.19.2
  fribidi_get_mirror_char@Base 0.19.2
  fribidi_get_par_direction@Base 0.19.2
  fribidi_get_par_embedding_levels@Base 0.19.2
+ fribidi_get_par_embedding_levels_ex@Base 1.0.0
  fribidi_get_type@Base 0.19.2
  fribidi_get_type_internal@Base 0.19.2
  fribidi_iso8859_6_to_unicode_c@Base 0.19.2
