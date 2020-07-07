@@ -1,6 +1,7 @@
 fribidi (1.0.5-3.1+deb10u1pexip1) pexip; urgency=medium
 
   * Migrate to Buster
+  * Drop debhelper compat down to 9 to allow building in older releases too
 
  -- Steve McIntyre <steve.mcintyre@pexip.com>  Tue, 07 Jul 2020 10:26:49 +0100
 
