@@ -1,4 +1,4 @@
-fribidi (1.0.5-3.1+deb10u2) buster; urgency=high
+fribidi (1.0.8-2+deb11u1) bullseye; urgency=medium
 
   * Non-maintainer upload by the LTS Team.
   * CVE-2022-25308
@@ -11,12 +11,45 @@ fribidi (1.0.5-3.1+deb10u2) buster; urgency=high
 
  -- Thorsten Alteholz <debian@alteholz.de>  Tue, 05 Apr 2022 22:03:02 +0200
 
-fribidi (1.0.5-3.1+deb10u1) buster-security; urgency=high
+fribidi (1.0.8-2) unstable; urgency=medium
 
-  * Non-maintainer upload by the Security Team.
+  * Add  revert_log2vis_get_embedding_levels.diff patch to revert back 
+    fribidi_log2vis_get_embedding_levels function.
+    It seems to be removed by mistake by upstream, since its documentation is
+    still there (Closes: #947081)
+  * Revert last update to symbols file
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Sat, 21 Dec 2019 03:11:40 +0100
+
+fribidi (1.0.8-1) unstable; urgency=medium
+
+  * New upstream version 1.0.8
+  * Add Rules-Requires-Root=no
+  * Set debhelper-compat in build deps
+  * Refresh manpages.diff patch.
+    Dropped Truncate-isolate_level-to-FRIBIDI_BIDI_MAX_EXPLICIT_.diff,
+    applied upstream
+  * Update symbols file
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Thu, 19 Dec 2019 21:07:01 +0100
+
+fribidi (1.0.7-1.1) unstable; urgency=high
+
+  * Non-maintainer upload.
   * Truncate isolate_level to FRIBIDI_BIDI_MAX_EXPLICIT_LEVEL (CVE-2019-18397)
+    (Closes: #944327)
 
- -- Salvatore Bonaccorso <carnil@debian.org>  Wed, 06 Nov 2019 07:48:41 +0100
+ -- Salvatore Bonaccorso <carnil@debian.org>  Fri, 08 Nov 2019 13:36:50 +0100
+
+fribidi (1.0.7-1) unstable; urgency=medium
+
+  * Imported Upstream version 1.0.7
+  * Drop no-config-h.diff patch, applied upstream
+  * Update standards version to 4.4.1
+  * Bumped compat level to 12
+  * Update copyright years
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Thu, 03 Oct 2019 06:03:43 +0200
 
 fribidi (1.0.5-3.1) unstable; urgency=medium
 
