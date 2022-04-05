@@ -33,11 +33,6 @@
 #include <fribidi-deprecated.h>
 
 #include <stdio.h>
-
-#ifdef HAVE_CONFIG_H
-# include <config.h>
-#endif
-
 #ifdef STDC_HEADERS
 # include <stdlib.h>
 # include <stddef.h>

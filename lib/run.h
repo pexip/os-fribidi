@@ -29,7 +29,7 @@
 #ifndef _RUN_H
 #define _RUN_H
 
-#include "fribidi-common.h"
+#include "common.h"
 
 #include <fribidi-common.h>
 
