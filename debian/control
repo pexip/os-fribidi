@@ -11,7 +11,7 @@ Build-Depends: debhelper (>= 9), pkg-config
 Homepage: http://www.fribidi.org/
 Vcs-Git: https://salsa.debian.org/debian/fribidi.git
 Vcs-Browser: https://salsa.debian.org/debian/fribidi
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ buster
+XS-Pexip-Upstream: http://deb.debian.org/debian/ bullseye
 
 Package: libfribidi0
 Architecture: any
