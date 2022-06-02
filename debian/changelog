@@ -1,3 +1,9 @@
+fribidi (1.0.8-2pexip1) pexip; urgency=medium
+
+  * Initial bullseye build
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Thu, 02 Jun 2022 14:42:12 +0100
+
 fribidi (1.0.8-2) unstable; urgency=medium
 
   * Add  revert_log2vis_get_embedding_levels.diff patch to revert back 
