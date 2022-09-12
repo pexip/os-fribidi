@@ -33,11 +33,6 @@
 #include <fribidi-deprecated.h>
 
 #include <stdio.h>
-
-#ifdef HAVE_CONFIG_H
-# include <config.h>
-#endif
-
 #ifdef STDC_HEADERS
 # include <stdlib.h>
 # include <stddef.h>
@@ -423,11 +418,11 @@ FRIBIDI_END_IGNORE_DEPRECATIONS
 
 	      /* Create a bidi string. */
 	      base = input_base_direction;
-
+FRIBIDI_BEGIN_IGNORE_DEPRECATIONS
 	      log2vis = fribidi_log2vis (logical, len, &base,
 					 /* output */
 					 visual, ltov, vtol, levels);
-
+FRIBIDI_END_IGNORE_DEPRECATIONS
 	      if (log2vis)
 		{
 
@@ -435,11 +430,12 @@ FRIBIDI_END_IGNORE_DEPRECATIONS
 		    printf ("%-*s => ", padding_width, S_);
 
 		  /* Remove explicit marks, if asked for. */
-
+FRIBIDI_BEGIN_IGNORE_DEPRECATIONS
 		  if (do_clean)
 		    len =
 		      fribidi_remove_bidi_marks (visual, len, ltov, vtol,
 						 levels);
+FRIBIDI_END_IGNORE_DEPRECATIONS
 
 		  if (show_visual)
 		    {

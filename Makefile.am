@@ -9,8 +9,7 @@ SUBDIRS = gen.tab lib bin doc test
 EXTRA_DIST = autogen.sh ChangeLog.old \
 	meson.build meson_options.txt bin/meson.build doc/meson.build \
 	gen.tab/meson.build lib/meson.build test/meson.build \
-	test/test-runner.py test/unicode-conformance/meson.build \
-        README.md
+	test/test-runner.py test/unicode-conformance/meson.build
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = @PACKAGE@.pc
