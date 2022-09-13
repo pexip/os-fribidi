@@ -1,3 +1,16 @@
+fribidi (1.0.8-2+deb11u1) bullseye; urgency=medium
+
+  * Non-maintainer upload by the LTS Team.
+  * CVE-2022-25308
+    stack-buffer-overflow issue in main()
+  * CVE-2022-25309
+    heap-buffer-overflow issue in fribidi_cap_rtl_to_unicode()
+  * CVE-2022-25310
+    SEGV issue in fribidi_remove_bidi_marks()
+    (Closes: #1008793)
+
+ -- Thorsten Alteholz <debian@alteholz.de>  Tue, 05 Apr 2022 22:03:02 +0200
+
 fribidi (1.0.8-2pexip3) pexip-bullseye; urgency=medium
 
   * Bullseye rebuild for ARM64 inclusion
