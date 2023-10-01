@@ -32,7 +32,7 @@ endif
 gen_unicode_version = executable('gen-unicode-version',
   'gen-unicode-version.c',
   include_directories: incs,
-  c_args: native_args,
+  c_args: native_args + visibility_args,
   install: false,
   native: true)
 
@@ -67,7 +67,7 @@ foreach tab : tabs
     fribidi_unicode_version_h,
     gen_prog_src, 'packtab.c',
     include_directories: incs,
-    c_args: native_args,
+    c_args: native_args + visibility_args,
     install: false,
     native: true)
 
