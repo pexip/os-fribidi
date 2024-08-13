@@ -32,14 +32,18 @@ if have_visibility_hidden
 endif
 
 # Must explicitly make symbols public if default visibility is hidden
-if have_visibility_hidden
-  visibility_args = ['-DFRIBIDI_ENTRY=extern __attribute__ ((visibility ("default")))']
-else
-  if host_machine.system() == 'windows' and get_option('default_library') != 'static'
+static_build = get_option('default_library') == 'static'
+if host_machine.system() == 'windows'
+  if not static_build
     visibility_args = ['-DFRIBIDI_ENTRY=__declspec(dllexport)']
   else
     visibility_args = ['-DFRIBIDI_ENTRY=extern']
   endif
+
+elif have_visibility_hidden and not static_build
+  visibility_args = ['-DFRIBIDI_ENTRY=extern __attribute__ ((visibility ("default")))']
+else
+  visibility_args = ['-DFRIBIDI_ENTRY=extern']
 endif
 
 cdata = configuration_data()
