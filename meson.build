@@ -95,6 +95,6 @@ pkg = import('pkgconfig')
 pkg.generate(name: 'GNU FriBidi',
   filebase: 'fribidi',
   description: 'Unicode Bidirectional Algorithm Library',
-  libraries: libfribidi, 
+  libraries: libfribidi_dep, 
   subdirs: 'fribidi',
   version: meson.project_version())
