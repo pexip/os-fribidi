@@ -1,19 +1,67 @@
-fribidi (1.0.8-2.1) unstable; urgency=medium
+fribidi (1.0.16-1) unstable; urgency=medium
 
-  * Non-maintainer upload by the LTS Team.
-  * CVE-2022-25308
-    stack-buffer-overflow issue in main()
-  * CVE-2022-25309
-    heap-buffer-overflow issue in fribidi_cap_rtl_to_unicode()
-  * CVE-2022-25310
-    SEGV issue in fribidi_remove_bidi_marks()
-    (Closes: #1008793)
+  * New upstream version 1.0.16
+  * Update copyright years
+  * d/control: bump standards version to 4.7.0
 
- -- Thorsten Alteholz <debian@alteholz.de>  Tue, 05 Apr 2022 22:03:02 +0200
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Mon, 09 Dec 2024 18:10:37 +0100
+
+fribidi (1.0.15-1) unstable; urgency=medium
+
+  * New upstream version 1.0.15
+  * d/control: update build-dep: pkg-config -> pkgconf
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Tue, 16 Jul 2024 05:02:19 +0200
+
+fribidi (1.0.13-3) unstable; urgency=medium
+
+  * d/rules: always include fallback CFLAGS to make build reproducible.
+    Thanks to Chris Lamb <lamby@debian.org> (Closes: #1038730)
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Tue, 20 Jun 2023 22:09:41 +0200
+
+fribidi (1.0.13-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Wed, 14 Jun 2023 22:59:10 +0200
+
+fribidi (1.0.13-1) experimental; urgency=medium
+
+  * New upstream version 1.0.13
+  * d/libfribi-dev.manpages: re-install dev manpages
+  * Update changelog for 1.0.13-1~1.gbp477ed3 release
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Wed, 17 May 2023 03:48:20 +0200
+
+fribidi (1.0.12-1) experimental; urgency=medium
+
+  * New upstream version 1.0.12
+    Fixes: CVE-2022-25308, CVE-2022-25309, CVE-2022-25310
+  * Add *.la to d/not-installed
+  * d/watch: update & add mangling to get iupstream generated xz tarball
+  * Dropped all patches, applied upstream
+  * d/u/metadata: remove Homepage field
+  * d/control:
+    + updated standards version to 4.6.2
+    + update to debhelper-compat 13
+  * d/tests/build: make cross-test-friendly.
+    Thanks to Steve Langasek <steve.langasek@canonical.com> (Closes: #983891)
+  * d/control: support the noudeb build profile.
+    Thanks to Helmut Grohne <helmut@subdivi.de> (Closes: #1024919)
+  * d/libfribi-dev.manpages: do not install dev manpages till upstream fixes
+    them
+
+  [ Mike Gerow ]
+  * build with debug symbols to fix -debugsym packages. (Closes: #930791)
+    This fixes the lintian warnings complaining about debugsym packages
+    missing debug symbols.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Thu, 27 Apr 2023 03:57:38 +0200
 
 fribidi (1.0.8-2) unstable; urgency=medium
 
-  * Add  revert_log2vis_get_embedding_levels.diff patch to revert back 
+  * Add  revert_log2vis_get_embedding_levels.diff patch to revert back
     fribidi_log2vis_get_embedding_levels function.
     It seems to be removed by mistake by upstream, since its documentation is
     still there (Closes: #947081)

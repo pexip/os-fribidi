@@ -1,2 +1,4 @@
-version=3
-https://github.com/fribidi/fribidi/releases /fribidi/fribidi/releases/download/.*/fribidi-(.*)\.tar\.bz2
+version=4
+opts=downloadurlmangle=s#archive/refs/tags/v(.*)\.tar\.gz#releases/download/v$1/@PACKAGE@-$1\.tar\.xz# \
+https://github.com/fribidi/@PACKAGE@/tags \
+/fribidi/@PACKAGE@/archive/refs/tags/v(.*)\.tar\.gz

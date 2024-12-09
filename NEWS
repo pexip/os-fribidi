@@ -1,3 +1,50 @@
+Overview of changes between 1.0.15 and 1.0.16
+=============================================
+
+* Update Unicode character databases to v16.0.0
+
+Overview of changes between 1.0.14 and 1.0.15
+=============================================
+
+* Fixed the bad tarball from 1.0.14 with stall include files. There are no other changes
+
+Overview of changes between 1.0.13 and 1.0.14
+=============================================
+
+* Updated Unicode tables to version 15.1
+
+Overview of changes between 1.0.12 and 1.0.13
+=============================================
+
+* Adding missing man pages to the tar release file.
+
+Overview of changes between 1.0.11 and 1.0.12
+=============================================
+
+* Various fuzzing fixes.
+
+Overview of changes between 1.0.10 and 1.0.11
+=============================================
+
+* Updated Unicode tables to version 14.
+* Skip isolates in fribidi_get_par_direction().
+* Various fuzzing fixes.
+* Various build fixes.
+
+Overview of changes between 1.0.9 and 1.0.10
+=============================================
+
+* Fixed various compilation problems and symbol exports necessary for proper compilation under windows.
+
+Overview of changes between 1.0.8 and 1.0.9
+=============================================
+
+* A bug fix in the fribidi unicode algorithm where isolate sequences were not really isolated.
+
+* Restored mistakenly removed deprecated function fribidi_log2vis_get_embedding_levels()
+
+* autotools now generates xz archives instead of bzip2 archives
+
 Overview of changes between 1.0.7 and 1.0.8
 =============================================
 
