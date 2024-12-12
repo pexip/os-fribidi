@@ -30,6 +30,10 @@
 #include <fribidi-unicode.h>
 
 #include <stdio.h>
+#ifdef HAVE_CONFIG_H
+# include <config.h>
+#endif
+
 #ifdef STDC_HEADERS
 # include <stdlib.h>
 # include <stddef.h>
@@ -154,7 +158,7 @@ static const char *ignored_bidi_types[] = {
 
 static const char *transparent_general_categories[] = {
   "Mn",
-  "Mn",
+  "Me",
   "Cf",
   NULL
 };
