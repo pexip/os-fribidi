@@ -21,7 +21,7 @@ dnl   FRIBIDI_BINARY_AGE = FRIBIDI_INTERFACE_AGE = 0;
 dnl
 m4_define(fribidi_major_version, 1)dnl
 m4_define(fribidi_minor_version, 0)dnl
-m4_define(fribidi_micro_version, 8)dnl
+m4_define(fribidi_micro_version, 16)dnl
 m4_define(fribidi_interface_version, 4)dnl
 m4_define(fribidi_interface_age, 0)dnl
 m4_define(fribidi_binary_age, 4)dnl
@@ -38,7 +38,7 @@ AC_CONFIG_SRCDIR([fribidi.pc.in])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
-AM_INIT_AUTOMAKE([1.11.1 gnits dist-bzip2 no-dist-gzip -Wall no-define])
+AM_INIT_AUTOMAKE([1.11.1 gnits dist-xz no-dist-gzip -Wall no-define])
 AM_SILENT_RULES([yes])
 
 AM_PROG_AR
@@ -146,6 +146,23 @@ if test x$enable_deprecated = xno; then
 	AC_DEFINE(FRIBIDI_NO_DEPRECATED, 1,
 		  [Don not build deprecated functionality])
 fi
+
+# define FRIBIDI_LIB_STATIC if in static mode
+if test "$enable_static" = "yes" ; then
+	FRIBIDI_CPPFLAGS="-DFRIBIDI_LIB_STATIC"
+fi
+AC_SUBST(FRIBIDI_CPPFLAGS)
+
+if test x$enable_shared = xyes; then
+    ENABLE_SHARED_TRUE=
+    ENABLE_SHARED_FALSE="#"
+else
+    ENABLE_SHARED_TRUE="#"
+    ENABLE_SHARED_FALSE=
+fi
+AC_SUBST(ENABLE_SHARED_TRUE)
+AC_SUBST(ENABLE_SHARED_FALSE)
+
 
 # Generate output
 AC_CONFIG_FILES([fribidi.pc

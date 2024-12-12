@@ -4,6 +4,14 @@
 
 set -e
 
+if [ -n "${DEB_HOST_GNU_TYPE:-}" ]; then
+    CC="$DEB_HOST_GNU_TYPE-gcc"
+    PKGCONFIG="$DEB_HOST_GNU_TYPE-pkg-config"
+else
+    CC=gcc
+    PKGCONFIG=pkg-config
+fi
+
 WORKDIR=$(mktemp -d)
 trap "rm -rf $WORKDIR" 0 INT QUIT ABRT PIPE TERM
 cd $WORKDIR
@@ -18,7 +26,7 @@ int main(int argc, char **argv)
 }
 EOF
 
-gcc -o fribiditest fribiditest.c `pkg-config --cflags --libs fribidi`
+"$CC" -o fribiditest fribiditest.c `"$PKGCONFIG" --cflags --libs fribidi`
 echo "build: OK"
 [ -x fribiditest ]
 ./fribiditest

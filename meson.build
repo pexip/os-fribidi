@@ -1,5 +1,5 @@
-project('fribidi', 'c', version: '1.0.8',
-  meson_version : '>= 0.44')
+project('fribidi', 'c', version: '1.0.16',
+  meson_version : '>= 0.54')
 
 # New release:
 #   interface_age++
@@ -25,20 +25,13 @@ if cc.get_id() == 'gcc' and cc.has_argument('-ansi')
   add_project_arguments('-ansi', language: 'c')
 endif
 
-# Symbol visibility
-have_visibility_hidden = cc.has_argument('-fvisibility=hidden')
-if have_visibility_hidden
-  add_project_arguments('-fvisibility=hidden', language: 'c')
-endif
-
-# Must explicitly make symbols public if default visibility is hidden
-if have_visibility_hidden
-  visibility_args = ['-DFRIBIDI_ENTRY=extern __attribute__ ((visibility ("default")))']
-else
-  if host_machine.system() == 'windows' and get_option('default_library') != 'static'
-    visibility_args = ['-DFRIBIDI_ENTRY=__declspec(dllexport)']
-  else
-    visibility_args = ['-DFRIBIDI_ENTRY=extern']
+# Handle symbol visibility for Windows
+fribidi_static_cargs = []
+fribidi_build_cargs = []
+if host_machine.system() == 'windows'
+  fribidi_build_cargs = ['-DFRIBIDI_BUILD']
+  if get_option('default_library') == 'static'
+    fribidi_static_cargs = ['-DFRIBIDI_LIB_STATIC']
   endif
 endif
 
@@ -69,8 +62,7 @@ endif
 # This is available pretty much everywhere
 cdata.set('HAVE_STRINGIZE', 1)
 
-buildtype = get_option('buildtype')
-if buildtype == 'debug' or buildtype == 'debugoptimized'
+if get_option('debug')
   cdata.set('DEBUG', 1)
 endif
 
@@ -84,17 +76,22 @@ incs = include_directories('.', 'lib', 'gen.tab')
 
 subdir('gen.tab')
 subdir('lib')
-subdir('bin')
-subdir('test')
+if get_option('bin') or get_option('tests')
+  subdir('bin')
+endif
+if get_option('tests')
+   subdir('test')
+endif
 if get_option('docs')
   subdir('doc')
 endif
 
 # fribidi.pc
 pkg = import('pkgconfig')
-pkg.generate(name: 'GNU FriBidi',
+pkg.generate(libfribidi,
+  name: 'GNU FriBidi',
   filebase: 'fribidi',
   description: 'Unicode Bidirectional Algorithm Library',
-  libraries: libfribidi, 
+  extra_cflags: fribidi_static_cargs,
   subdirs: 'fribidi',
   version: meson.project_version())

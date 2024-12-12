@@ -75,11 +75,14 @@ libfribidi = library('fribidi',
   fribidi_sources, fribidi_unicode_version_h, fribidi_config_h,
   generated_tab_include_files, config_h,
   include_directories: incs,
-  c_args: ['-DHAVE_CONFIG_H'] + visibility_args,
+  c_args: ['-DHAVE_CONFIG_H'] + fribidi_build_cargs + fribidi_static_cargs,
+  gnu_symbol_visibility: 'hidden',
   version: libversion,
   soversion: soversion,
   install: true)
 
 libfribidi_dep = declare_dependency(link_with: libfribidi,
   include_directories: incs,
-  sources: [fribidi_unicode_version_h, fribidi_config_h])
+  sources: [fribidi_unicode_version_h, fribidi_config_h],
+  compile_args: fribidi_static_cargs)
+meson.override_dependency('fribidi', libfribidi_dep)

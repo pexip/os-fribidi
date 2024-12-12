@@ -1,13 +1,13 @@
 .\" WARNING! THIS FILE WAS GENERATED AUTOMATICALLY BY c2man!
 .\" DO NOT EDIT! CHANGES MADE TO THIS FILE WILL BE LOST!
-.TH "fribidi_parse_charset" 3 "27 September 2019" "c2man fribidi-char-sets.h" "Programmer's Manual"
+.TH "fribidi_parse_charset" 3 "25 September 2024" "c2man fribidi-char-sets.h" "Programmer's Manual"
 .SH "NAME"
 fribidi_parse_charset \- parse character set name
 .SH "SYNOPSIS"
 .ft B
 #include <fribidi.h>
 .sp
-extern FriBidiCharSet fribidi_parse_charset(const char *s);
+FriBidiCharSet fribidi_parse_charset(const char *s);
 .ft R
 .SH "PARAMETERS"
 .TP
@@ -19,7 +19,7 @@ Parse character set name.
 The character set named s, or FRIBIDI_CHAR_SET_NOT_FOUND if the
 character set is not available.
 .sp
-Possible values for an \fBextern FriBidiCharSet\fR are as follows:
+Possible values for a \fBFriBidiCharSet\fR are as follows:
 .RS 0.75in
 .PD 0
 .ft B
@@ -74,4 +74,5 @@ fribidi_shape_mirroring(3),
 fribidi_get_bracket(3),
 fribidi_get_bracket_types(3),
 fribidi_shape(3),
-fribidi_remove_bidi_marks(3)
+fribidi_remove_bidi_marks(3),
+fribidi_log2vis(3)

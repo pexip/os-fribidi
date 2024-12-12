@@ -1,13 +1,13 @@
 .\" WARNING! THIS FILE WAS GENERATED AUTOMATICALLY BY c2man!
 .\" DO NOT EDIT! CHANGES MADE TO THIS FILE WILL BE LOST!
-.TH "fribidi_get_type_internal" 3 "13 October 2019" "c2man fribidi-deprecated.h" "Programmer's Manual"
+.TH "fribidi_get_type_internal" 3 "25 September 2024" "c2man fribidi-deprecated.h" "Programmer's Manual"
 .SH "NAME"
 fribidi_get_type_internal \- get character bidi type
 .SH "SYNOPSIS"
 .ft B
 #include <fribidi.h>
 .sp
-extern FriBidiCharType fribidi_get_type_internal(FriBidiChar ch);
+FriBidiCharType fribidi_get_type_internal(FriBidiChar ch);
 .ft R
 .SH "PARAMETERS"
 .TP
@@ -16,7 +16,7 @@ Input character.
 .SH "DESCRIPTION"
 Deprecated. Replaced by fribidi_get_bidi_type.
 .SH "RETURNS"
-Since there are 23 possible values for an \fBextern FriBidiCharType\fR, they are not all listed here.
+Since there are 23 possible values for a \fBFriBidiCharType\fR, they are not all listed here.
 .SH "SEE ALSO"
 fribidi_shape_arabic(3),
 fribidi_get_par_direction(3),
@@ -46,4 +46,5 @@ fribidi_shape_mirroring(3),
 fribidi_get_bracket(3),
 fribidi_get_bracket_types(3),
 fribidi_shape(3),
-fribidi_remove_bidi_marks(3)
+fribidi_remove_bidi_marks(3),
+fribidi_log2vis(3)
