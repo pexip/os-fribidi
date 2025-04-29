@@ -1,3 +1,9 @@
+fribidi (1.0.16-1+pexip25u1) pexip-trixie; urgency=medium
+
+  * Initial trixie build
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Tue, 29 Apr 2025 22:31:35 +0100
+
 fribidi (1.0.16-1+pexip24u1) pexip; urgency=medium
 
   * Migrate to Trixie
